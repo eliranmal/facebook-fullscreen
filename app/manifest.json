@@ -1,5 +1,4 @@
 {
-    "manifest_version": 2,
     "name": "facebook games fullscreen",
     "description": "adds a button to the page to make facebook games go fullscreen",
     "version": "0.1.0",
@@ -14,5 +13,6 @@
             "content-script.js"
         ],
         "run_at": "document_end"
-    }]
+    }],
+    "manifest_version": 2
 }
