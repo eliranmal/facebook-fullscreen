@@ -21,7 +21,11 @@
         "run_at": "document_end"
     }],
     "browser_action": {
-        "default_title": "go fullscreen"
+        "default_title": "go fullscreen",
+        "default_icon": "images/logo-48.png"
+    },
+    "icons": {
+        "48": "images/logo-48.png"
     },
     "homepage_url": "https://jsfiddle.net/eliranmal/su3vjt0o/",
     "manifest_version": 2
