@@ -1,7 +1,7 @@
 {
     "name": "facebook games fullscreen",
     "description": "adds a button to the page to make facebook games go fullscreen",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "permissions": [
         "activeTab"
     ],
