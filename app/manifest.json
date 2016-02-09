@@ -1,7 +1,7 @@
 {
     "name": "facebook games fullscreen",
     "description": "makes facebook games go fullscreen",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "permissions": [
         "activeTab"
     ],
@@ -27,6 +27,5 @@
     "icons": {
         "48": "images/logo-48.png"
     },
-    "homepage_url": "https://jsfiddle.net/eliranmal/su3vjt0o/",
     "manifest_version": 2
 }
