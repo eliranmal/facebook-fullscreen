@@ -1,9 +1,4 @@
-// jsfiddle: https://jsfiddle.net/eliranmal/su3vjt0o/
-
-// todo - publish to chrome web store :)
-
-
-// init constants
+// init constants and variables
 
 var win = window,
     doc = document,
@@ -63,7 +58,7 @@ var requestFullscreen = function() {
     }
 };
 
-var elementRequestFullScreen = function(selector) {
+var requestFullScreenCommand = function(selector) {
     var element = doc.querySelector(selector);
     if (!element) {
         err('failed to find element', selector);
@@ -75,12 +70,8 @@ var elementRequestFullScreen = function(selector) {
     });
 };
 
-
-// bootstrap
-
-var bootstrap = function() {
-    log('bootstrapping');
-    var el = doc.querySelector(selectors.iframeCanvas);
+var allowFullscreen = function(selector) {
+    var el = doc.querySelector(selector);
     if (el) {
         log('setting "allowFullScreen" attribute to "true"', el);
         setVendorAttribute(el, 'allowFullScreen', 'true');
@@ -88,11 +79,19 @@ var bootstrap = function() {
 };
 
 var goFullscreen = function() {
-    elementRequestFullScreen(selectors.iframeCanvas)();
+    requestFullScreenCommand(selectors.iframeCanvas)();
+};
+
+var enableFullscreen = function() {
+    allowFullscreen(selectors.iframeCanvas);
 };
 
 
-bootstrap();
+doc.addEventListener("readystatechange", function() {
+    if (doc.readyState == "complete") {
+        enableFullscreen();
+    }
+}, false);
 
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message === 'fullscreen:go') {
