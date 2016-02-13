@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-zip ../export/facebook-fullscreen.zip -r ../app/
+pushd ../app/
+zip ../export/facebook-fullscreen.zip -r *
+popd
