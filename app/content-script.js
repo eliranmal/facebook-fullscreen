@@ -22,6 +22,14 @@ var err = function() {
     console.error.apply(console, arguments);
 };
 
+var getResource = function(path) {
+    return chrome.extension.getURL(path);
+};
+
+var getImage = function(file) {
+    return getResource('images/' + file + '.png');
+};
+
 var setVendorAttribute = function(element, attribute, value) {
     var i,
         val = (value + '').toLowerCase();
@@ -86,9 +94,34 @@ var enableFullscreen = function() {
     allowFullscreen(selectors.iframeCanvas);
 };
 
+var createFullscreenButton = function() {
+    var b = document.createElement('button'),
+        s = b.style;
 
-doc.addEventListener("readystatechange", function() {
-    if (doc.readyState == "complete") {
+    s.position = 'fixed';
+    s.display = 'inline-block';
+    s.width = '48px';
+    s.height = '48px';
+    s.backgroundColor = 'transparent';
+    s.backgroundImage = 'url("' + getImage('logo-48') + '")';
+    s.zIndex = '99999';
+
+    b.addEventListener('click', function(e) {
+        log('clicked the fullscreen button');
+        goFullscreen();
+    }, false);
+
+    return b;
+};
+
+var addFullscreenButton = function() {
+    var fullscreenButton = createFullscreenButton();
+    document.querySelector(selectors.iframeCanvas).parentElement.appendChild(fullscreenButton);
+};
+
+doc.addEventListener('readystatechange', function() {
+    if (doc.readyState == 'complete') {
+        log('ready state is "complete"');
         enableFullscreen();
     }
 }, false);
