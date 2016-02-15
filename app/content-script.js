@@ -95,6 +95,7 @@ var enableFullscreen = function() {
 };
 
 var createFullscreenButton = function() {
+    log('creating fullscreen button element');
     var b = document.createElement('button'),
         s = b.style;
 
@@ -111,6 +112,7 @@ var createFullscreenButton = function() {
         goFullscreen();
     }, false);
 
+    log(b);
     return b;
 };
 
@@ -123,6 +125,7 @@ doc.addEventListener('readystatechange', function() {
     if (doc.readyState == 'complete') {
         log('ready state is "complete"');
         enableFullscreen();
+        createFullscreenButton();
     }
 }, false);
 
