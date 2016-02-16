@@ -1,7 +1,7 @@
 {
     "name": "facebook fullscreen",
     "description": "makes facebook apps and games go fullscreen",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "permissions": [
         "activeTab"
     ],

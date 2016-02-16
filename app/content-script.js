@@ -125,7 +125,7 @@ doc.addEventListener('readystatechange', function() {
     if (doc.readyState == 'complete') {
         log('ready state is "complete"');
         enableFullscreen();
-        createFullscreenButton();
+        addFullscreenButton();
     }
 }, false);
 
