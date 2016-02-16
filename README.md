@@ -7,4 +7,4 @@ check it out [on chrome web store][1].
 
 
 
-[1]: ​https://chrome.google.com/webstore/detail/facebook-fullscreen/pjcdeachgolnlbkfafofginfgjicjpig
+[1]: https://chrome.google.com/webstore/detail/facebook-fullscreen/pjcdeachgolnlbkfafofginfgjicjpig
